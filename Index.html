@@ -55,6 +55,23 @@
       100% { opacity: 0.8; }
     }
     
+    @keyframes shimmer {
+      0% { background-position: -1000px 0; }
+      100% { background-position: 1000px 0; }
+    }
+    
+    .shimmer {
+      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+      background-size: 1000px 100%;
+      animation: shimmer 2s infinite linear;
+    }
+    
+    .dark .shimmer {
+      background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
+      background-size: 1000px 100%;
+      animation: shimmer 2s infinite linear;
+    }
+    
     body, .mode-transition, button, a {
       transition: all 0.3s ease;
     }
@@ -145,6 +162,12 @@
     
     .btn-press:active {
       transform: scale(0.98);
+    }
+    
+    .skeleton {
+      border-radius: 0.375rem;
+      overflow: hidden;
+      position: relative;
     }
   </style>
 </head>
@@ -329,11 +352,67 @@
     const rowsPerPage = 10;
     let filteredData = [];
     let currentView = 'table';
+    let searchTimeout = null;
+    let cachedData = null;
+    const CACHE_DURATION = 5 * 60 * 1000; // 5 minutos em milissegundos
 
-    function formatDate(dateString) {
-      if (!dateString) return '-';
-      const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
-      return new Date(dateString).toLocaleDateString('pt-BR', options);
+    // helpers para normalizar
+    const norm   = v => (v == null ? '' : String(v)).toLowerCase();
+    const digits = v => (v == null ? '' : String(v)).replace(/\D/g, '');
+
+    // Função debounce para pesquisa
+    function debounce(func, wait) {
+      return function executedFunction(...args) {
+        const later = () => {
+          clearTimeout(searchTimeout);
+          func(...args);
+        };
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(later, wait);
+      };
+    }
+
+    function filterData(searchTerm) {
+      const raw        = (searchTerm || '').trim();
+      const term       = norm(raw);
+      const termDigits = digits(raw);
+
+      if (!raw) {
+        filteredData = [...allData];
+        currentPage = 1;
+        updateView(filteredData);
+        return;
+      }
+
+      filteredData = allData.filter(item => {
+        // pegue tudo como string segura
+        const awb          = norm(item.AWB);
+        const awbDigits    = digits(item.AWB);
+        const nfs          = norm(item["NF'S"]);
+        const nfsDigits    = digits(item["NF'S"]);
+        const fornecedor   = norm(item.FORNECEDOR);
+        const marca        = norm(item.MARCA);
+        const status       = norm(item.STATUS);
+        const observacao   = norm(item["OBSERVAÇÃO"] ?? item.OBSERVACAO);
+
+        // se o usuário digitou números, compare por dígitos (ignora hífen, espaços, etc.)
+        if (/^\d+$/.test(termDigits)) {
+          return awbDigits.includes(termDigits) || nfsDigits.includes(termDigits);
+        }
+
+        // pesquisa textual ampla
+        return (
+          awb.includes(term)        ||
+          nfs.includes(term)        ||
+          fornecedor.includes(term) ||
+          marca.includes(term)      ||
+          status.includes(term)     ||
+          observacao.includes(term)
+        );
+      });
+
+      currentPage = 1;
+      updateView(filteredData);
     }
 
     function getStatusClass(status) {
@@ -618,6 +697,9 @@
         `;
         tbody.appendChild(tr);
       } else {
+        // Usar DocumentFragment para melhor performance
+        const fragment = document.createDocumentFragment();
+        
         paginatedData.forEach(item => {
           const tr = document.createElement("tr");
           tr.className = "mode-transition hover:bg-gray-50 dark:hover:bg-gray-600/50";
@@ -684,11 +766,39 @@
             </td>
           `;
 
-          tbody.appendChild(tr);
+          fragment.appendChild(tr);
         });
+        
+        tbody.appendChild(fragment);
       }
 
       updatePaginationControls(data, page);
+    }
+     
+    function formatDate(value) {
+      if (!value) return "";
+      
+      // Tenta converter para data se for um formato reconhecido
+      if (typeof value === 'string' && value.includes('/')) {
+        const parts = value.split('/');
+        if (parts.length === 3) {
+          // Formato dd/mm/yyyy
+          return value;
+        }
+      }
+      
+      // Tenta converter de timestamp ou formato ISO
+      try {
+        const date = new Date(value);
+        if (!isNaN(date.getTime())) {
+          return date.toLocaleDateString("pt-BR");
+        }
+      } catch (e) {
+        console.warn("Erro ao formatar data:", value, e);
+      }
+      
+      // Retorna o valor original se não conseguir converter
+      return value;
     }
 
     function updateCardsView(data = filteredData, page = currentPage) {
@@ -711,6 +821,9 @@
           </div>
         `;
       } else {
+        // Usar DocumentFragment para melhor performance
+        const fragment = document.createDocumentFragment();
+        
         paginatedData.forEach(item => {
           const statusClass = getStatusClass(item.STATUS);
 
@@ -781,8 +894,10 @@
               </div>
             </div>
           `;
-          cardsContainer.appendChild(card);
+          fragment.appendChild(card);
         });
+        
+        cardsContainer.appendChild(fragment);
       }
 
       updatePaginationControls(data, page);
@@ -807,39 +922,6 @@
       document.getElementById("nextPage").disabled = endIdx >= data.length;
       document.getElementById("pageInfo").textContent = `Página ${page} de ${Math.ceil(data.length / rowsPerPage)}`;
       document.getElementById("tableInfo").textContent = `Mostrando ${startIdx + 1}-${Math.min(endIdx, data.length)} de ${data.length} registros`;
-    }
-
-    function filterData(searchTerm) {
-      if (!searchTerm) {
-        filteredData = [...allData];
-        updateView();
-        return;
-      }
-
-      const term = searchTerm.toLowerCase().trim();
-      
-      // Verifica se a pesquisa é um AWB (contém apenas números)
-      const isAwbSearch = /^\d{4,}$/.test(term);
-      
-      if (isAwbSearch) {
-        // Filtra especificamente por AWB quando a pesquisa contém apenas números
-        filteredData = allData.filter(item => 
-          item.AWB && item.AWB.toLowerCase().includes(term)
-        );
-      } else {
-        // Permite filtro normal se o usuário conseguir digitar algo não numérico (apesar da restrição no input)
-        filteredData = allData.filter(item => 
-          (item.AWB && item.AWB.toLowerCase().includes(term)) ||
-          (item["NF'S"] && item["NF'S"].toLowerCase().includes(term)) ||
-          (item.FORNECEDOR && item.FORNECEDOR.toLowerCase().includes(term)) ||
-          (item.MARCA && item.MARCA.toLowerCase().includes(term)) ||
-          (item.STATUS && item.STATUS.toString().toLowerCase().includes(term)) ||
-          (item.OBSERVAÇÃO && item.OBSERVAÇÃO.toString().toLowerCase().includes(term))
-        );
-      }
-
-      currentPage = 1;
-      updateView();
     }
 
     function toggleView(view) {
@@ -873,7 +955,48 @@
         `;
         refreshBtn.disabled = true;
         
+        // Verificar se temos dados em cache e se ainda são válidos
+        const now = Date.now();
+        if (cachedData && (now - cachedData.timestamp) < CACHE_DURATION) {
+          // Usar dados do cache
+          allData = cachedData.data;
+          filteredData = [...allData];
+          
+          updateView(filteredData);
+          createAlerts(allData);
+          updateStats(allData);
+          
+          document.getElementById("lastUpdate").textContent = `Última atualização: ${new Date(cachedData.timestamp).toLocaleTimeString('pt-BR')} (cache)`;
+          
+          // Atualizar em segundo plano
+          setTimeout(fetchNewData, 0);
+        } else {
+          // Buscar novos dados
+          await fetchNewData();
+        }
+        
+      } catch (err) {
+        console.error("Erro ao carregar dados:", err);
+        showErrorAlert(err);
+      } finally {
+        loading.style.opacity = 0;
+        setTimeout(() => loading.style.display = "none", 300);
+        
+        refreshBtn.innerHTML = `
+          <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+          </svg>
+          <span class="hidden md:inline">Atualizar</span>
+        `;
+        refreshBtn.disabled = false;
+      }
+    }
+
+    async function fetchNewData() {
+      try {
         const res = await fetch(API_URL);
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        
         const data = await res.json();
         
         let rawData = [];
@@ -893,44 +1016,47 @@
         
         filteredData = [...allData];
         
-        updateStats(allData);
+        // Armazenar em cache
+        cachedData = {
+          data: allData,
+          timestamp: Date.now()
+        };
+        localStorage.setItem('awbCache', JSON.stringify(cachedData));
+        
+        updateView(filteredData);
         createAlerts(allData);
-        updateView(allData);
+        updateStats(allData);
         
         const now = new Date();
         document.getElementById("lastUpdate").textContent = `Última atualização: ${now.toLocaleTimeString('pt-BR')}`;
         
       } catch (err) {
-        console.error("Erro ao carregar dados:", err);
-        document.getElementById("alertsContainer").innerHTML = `
-          <div class="p-3 rounded-lg bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800">
-            <div class="flex items-start">
-              <div class="flex-shrink-0 pt-0.5">
-                <svg class="h-5 w-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                </svg>
-              </div>
-              <div class="ml-3 flex-1">
-                <h3 class="text-sm font-medium text-red-800 dark:text-red-200">Erro ao carregar dados</h3>
-                <div class="mt-1 text-sm text-red-700 dark:text-red-300">
-                  <p>${err.message || 'Falha na conexão com o servidor'}</p>
-                </div>
+        console.error("Erro ao buscar dados:", err);
+        // Se já temos dados em cache, manteremos eles mesmo com erro de atualização
+        if (!cachedData) {
+          showErrorAlert(err);
+        }
+      }
+    }
+
+    function showErrorAlert(err) {
+      document.getElementById("alertsContainer").innerHTML = `
+        <div class="p-3 rounded-lg bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800">
+          <div class="flex items-start">
+            <div class="flex-shrink-0 pt-0.5">
+              <svg class="h-5 w-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+              </svg>
+            </div>
+            <div class="ml-3 flex-1">
+              <h3 class="text-sm font-medium text-red-800 dark:text-red-200">Erro ao carregar dados</h3>
+              <div class="mt-1 text-sm text-red-700 dark:text-red-300">
+                <p>${err.message || 'Falha na conexão com o servidor'}</p>
               </div>
             </div>
           </div>
-        `;
-      } finally {
-        loading.style.opacity = 0;
-        setTimeout(() => loading.style.display = "none", 300);
-        
-        refreshBtn.innerHTML = `
-          <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-          </svg>
-          <span class="hidden md:inline">Atualizar</span>
-        `;
-        refreshBtn.disabled = false;
-      }
+        </div>
+      `;
     }
 
     function toggleDarkMode() {
@@ -969,6 +1095,27 @@
       }
     }
 
+    function loadCachedData() {
+      const cached = localStorage.getItem('awbCache');
+      if (cached) {
+        try {
+          cachedData = JSON.parse(cached);
+          // Verificar se os dados do cache ainda são válidos
+          const now = Date.now();
+          if (now - cachedData.timestamp < CACHE_DURATION) {
+            allData = cachedData.data;
+            filteredData = [...allData];
+            updateView(filteredData);
+            createAlerts(allData);
+            updateStats(allData);
+            document.getElementById("lastUpdate").textContent = `Última atualização: ${new Date(cachedData.timestamp).toLocaleTimeString('pt-BR')} (cache)`;
+          }
+        } catch (e) {
+          console.error("Erro ao carregar dados do cache:", e);
+        }
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       checkDarkModePreference();
       document.getElementById('themeToggle').addEventListener('click', toggleDarkMode);
@@ -990,6 +1137,10 @@
         document.getElementById('viewDropdown').classList.add('hidden');
       });
       
+      // Carregar dados do cache imediatamente para exibir algo rápido
+      loadCachedData();
+      
+      // Iniciar o carregamento dos dados
       carregarTabela();
       
       const preferredView = localStorage.getItem('preferredView') || 'table';
@@ -998,9 +1149,11 @@
       document.getElementById('refreshBtn').addEventListener('click', carregarTabela);
       
       const searchInput = document.getElementById('searchInput');
-      searchInput.addEventListener('input', (e) => {
+      const debouncedFilter = debounce((e) => {
         filterData(e.target.value);
-      });
+      }, 300);
+      
+      searchInput.addEventListener('input', debouncedFilter);
       
       searchInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
