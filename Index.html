@@ -1,13 +1,13 @@
-
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<!-- saved from url=(0073)file:///C:/Users/jails/Downloads/deepseek_html_20250830_517c98%20(1).html -->
+<html lang="pt-br" class="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="description" content="Sistema de rastreamento aéreo de AWBs e cargas">
   <title>Rastreamento Aéreo | Monitoramento de Cargas</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233B82F6'><path d='M2.01 21l20.99-9L2.01 3 2 10l15 2-15 2z'/></svg>">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 24 24&#39; fill=&#39;%233B82F6&#39;&gt;&lt;path d=&#39;M2.01 21l20.99-9L2.01 3 2 10l15 2-15 2z&#39;/&gt;&lt;/svg&gt;">
+  <script src="./Rastreamento Aéreo _ Monitoramento de Cargas_files/saved_resource"></script>
+  <script src="./Rastreamento Aéreo _ Monitoramento de Cargas_files/chart.js.download"></script>
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -39,7 +39,7 @@
     }
   </script>
   <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
     
     @keyframes fly {
       0% { transform: translateX(0) rotate(0deg); opacity: 0.6; }
@@ -117,7 +117,11 @@
     }
     
     .status-badge {
-      @apply px-2 py-1 rounded-full text-xs font-semibold whitespace-nowrap;
+      padding: 0.25rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      white-space: nowrap;
     }
     
     .tooltip {
@@ -170,8 +174,110 @@
       overflow: hidden;
       position: relative;
     }
+
+    /* Estilos para os gráficos */
+    .chart-container {
+      position: relative;
+      height: 300px;
+      width: 100%;
+    }
+    
+    .chart-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      padding: 0.75rem;
+      background-color: #f9fafb;
+      border-radius: 0.5rem;
+    }
+    
+    .dark .chart-controls {
+      background-color: #1f2937;
+    }
+    
+    .chart-control {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .chart-control label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #374151;
+      margin-bottom: 0.25rem;
+    }
+    
+    .dark .chart-control label {
+      color: #d1d5db;
+    }
+    
+    .chart-control select {
+      padding: 0.375rem 0.75rem;
+      font-size: 0.875rem;
+      border-radius: 0.5rem;
+      border: 1px solid #d1d5db;
+      background-color: #fff;
+    }
+    
+    .dark .chart-control select {
+      background-color: #374151;
+      border-color: #4b5563;
+      color: #f3f4f6;
+    }
+    
+    .chart-control select:focus {
+      outline: none;
+      ring: 2px;
+      ring-color: #3b82f6;
+      border-color: transparent;
+    }
+    
+    /* Abas de navegação */
+    .tab-button {
+      padding: 0.5rem 1rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      border-bottom: 2px solid transparent;
+    }
+    
+    .tab-button.active {
+      color: #2563eb;
+      border-bottom-color: #2563eb;
+    }
+    
+    .dark .tab-button.active {
+      color: #60a5fa;
+      border-bottom-color: #60a5fa;
+    }
+    
+    .tab-button:not(.active) {
+      color: #6b7280;
+    }
+    
+    .dark .tab-button:not(.active) {
+      color: #9ca3af;
+    }
+    
+    .tab-button:hover:not(.active) {
+      color: #374151;
+    }
+    
+    .dark .tab-button:hover:not(.active) {
+      color: #d1d5db;
+    }
   </style>
-</head>
+
+<style>
+/* Added by debug script */
+.pulse { animation: pulse 2s infinite; }
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+/* Ensure sticky header backgrounds are valid */
+.light .sticky-header { background-color: rgba(249, 250, 251, 0.75); }
+.dark .sticky-header { background-color: rgba(31, 41, 55, 0.75); }
+</style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Inter, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.absolute{position:absolute}.relative{position:relative}.-inset-3{inset:-0.75rem}.right-0{right:0px}.right-2\.5{right:0.625rem}.top-2{top:0.5rem}.z-10{z-index:10}.mb-1{margin-bottom:0.25rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mt-1{margin-top:0.25rem}.mb-2{margin-bottom:0.5rem}.ml-1{margin-left:0.25rem}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-14{height:3.5rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-3{height:0.75rem}.min-h-screen{min-height:100vh}.w-14{width:3.5rem}.w-4{width:1rem}.w-40{width:10rem}.w-5{width:1.25rem}.w-full{width:100%}.w-3{width:0.75rem}.min-w-full{min-width:100%}.flex-1{flex:1 1 0%}@keyframes ping{75%, 100%{transform:scale(2);opacity:0}}.animate-ping{animation:ping 1s cubic-bezier(0, 0, 0.2, 1) infinite}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.space-x-1\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.375rem * var(--tw-space-x-reverse));margin-left:calc(0.375rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-2 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.5rem * var(--tw-space-x-reverse));margin-left:calc(0.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.divide-y > :not([hidden]) ~ :not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(1px * calc(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(1px * var(--tw-divide-y-reverse))}.divide-gray-200 > :not([hidden]) ~ :not([hidden]){--tw-divide-opacity:1;border-color:rgb(229 231 235 / var(--tw-divide-opacity, 1))}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.whitespace-normal{white-space:normal}.whitespace-nowrap{white-space:nowrap}.rounded{border-radius:0.25rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-md{border-radius:0.375rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-4{border-width:4px}.border-b{border-bottom-width:1px}.border-l-4{border-left-width:4px}.border-t{border-top-width:1px}.border-blue-200{--tw-border-opacity:1;border-color:rgb(191 219 254 / var(--tw-border-opacity, 1))}.border-blue-500{--tw-border-opacity:1;border-color:rgb(59 130 246 / var(--tw-border-opacity, 1))}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.border-gray-300{--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.border-green-500{--tw-border-opacity:1;border-color:rgb(34 197 94 / var(--tw-border-opacity, 1))}.border-purple-500{--tw-border-opacity:1;border-color:rgb(168 85 247 / var(--tw-border-opacity, 1))}.border-yellow-500{--tw-border-opacity:1;border-color:rgb(234 179 8 / var(--tw-border-opacity, 1))}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-blue-50{--tw-bg-opacity:1;background-color:rgb(239 246 255 / var(--tw-bg-opacity, 1))}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-purple-100{--tw-bg-opacity:1;background-color:rgb(243 232 255 / var(--tw-bg-opacity, 1))}.bg-purple-50{--tw-bg-opacity:1;background-color:rgb(250 245 255 / var(--tw-bg-opacity, 1))}.bg-yellow-100{--tw-bg-opacity:1;background-color:rgb(254 249 195 / var(--tw-bg-opacity, 1))}.bg-blue-100{--tw-bg-opacity:1;background-color:rgb(219 234 254 / var(--tw-bg-opacity, 1))}.bg-green-100{--tw-bg-opacity:1;background-color:rgb(220 252 231 / var(--tw-bg-opacity, 1))}.p-2{padding:0.5rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-8{padding-top:2rem;padding-bottom:2rem}.px-1\.5{padding-left:0.375rem;padding-right:0.375rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.pb-4{padding-bottom:1rem}.pt-2{padding-top:0.5rem}.text-left{text-align:left}.text-center{text-align:center}.font-sans{font-family:Inter, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.text-2xl{font-size:1.5rem;line-height:2rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.tracking-wider{letter-spacing:0.05em}.text-blue-500{--tw-text-opacity:1;color:rgb(59 130 246 / var(--tw-text-opacity, 1))}.text-blue-600{--tw-text-opacity:1;color:rgb(37 99 235 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity, 1))}.text-purple-600{--tw-text-opacity:1;color:rgb(147 51 234 / var(--tw-text-opacity, 1))}.text-yellow-800{--tw-text-opacity:1;color:rgb(133 77 14 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-75{opacity:0.75}.opacity-0{opacity:0}.shadow-card{--tw-shadow:0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);--tw-shadow-colored:0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-shadow{transition-property:box-shadow;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.hover\:bg-gray-100:hover{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-50:hover{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.hover\:bg-blue-100:hover{--tw-bg-opacity:1;background-color:rgb(219 234 254 / var(--tw-bg-opacity, 1))}.hover\:bg-purple-100:hover{--tw-bg-opacity:1;background-color:rgb(243 232 255 / var(--tw-bg-opacity, 1))}.hover\:text-blue-800:hover{--tw-text-opacity:1;color:rgb(30 64 175 / var(--tw-text-opacity, 1))}.hover\:text-purple-800:hover{--tw-text-opacity:1;color:rgb(107 33 168 / var(--tw-text-opacity, 1))}.hover\:shadow-md:hover{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.focus\:border-transparent:focus{border-color:transparent}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-blue-500:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(59 130 246 / var(--tw-ring-opacity, 1))}.disabled\:opacity-50:disabled{opacity:0.5}.group:hover .group-hover\:opacity-100{opacity:1}.dark\:divide-gray-600:is(.dark *) > :not([hidden]) ~ :not([hidden]){--tw-divide-opacity:1;border-color:rgb(75 85 99 / var(--tw-divide-opacity, 1))}.dark\:border-blue-900:is(.dark *){--tw-border-opacity:1;border-color:rgb(30 58 138 / var(--tw-border-opacity, 1))}.dark\:border-gray-600:is(.dark *){--tw-border-opacity:1;border-color:rgb(75 85 99 / var(--tw-border-opacity, 1))}.dark\:border-gray-700:is(.dark *){--tw-border-opacity:1;border-color:rgb(55 65 81 / var(--tw-border-opacity, 1))}.dark\:bg-gray-600:is(.dark *){--tw-bg-opacity:1;background-color:rgb(75 85 99 / var(--tw-bg-opacity, 1))}.dark\:bg-gray-700:is(.dark *){--tw-bg-opacity:1;background-color:rgb(55 65 81 / var(--tw-bg-opacity, 1))}.dark\:bg-gray-800:is(.dark *){--tw-bg-opacity:1;background-color:rgb(31 41 55 / var(--tw-bg-opacity, 1))}.dark\:bg-gray-900:is(.dark *){--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity, 1))}.dark\:bg-blue-900\/30:is(.dark *){background-color:rgb(30 58 138 / 0.3)}.dark\:bg-gray-500:is(.dark *){--tw-bg-opacity:1;background-color:rgb(107 114 128 / var(--tw-bg-opacity, 1))}.dark\:bg-purple-800\/50:is(.dark *){background-color:rgb(107 33 168 / 0.5)}.dark\:bg-purple-900\/30:is(.dark *){background-color:rgb(88 28 135 / 0.3)}.dark\:bg-yellow-900\/50:is(.dark *){background-color:rgb(113 63 18 / 0.5)}.dark\:bg-green-900\/30:is(.dark *){background-color:rgb(20 83 45 / 0.3)}.dark\:bg-yellow-900\/30:is(.dark *){background-color:rgb(113 63 18 / 0.3)}.dark\:text-blue-400:is(.dark *){--tw-text-opacity:1;color:rgb(96 165 250 / var(--tw-text-opacity, 1))}.dark\:text-gray-100:is(.dark *){--tw-text-opacity:1;color:rgb(243 244 246 / var(--tw-text-opacity, 1))}.dark\:text-gray-200:is(.dark *){--tw-text-opacity:1;color:rgb(229 231 235 / var(--tw-text-opacity, 1))}.dark\:text-gray-300:is(.dark *){--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.dark\:text-gray-400:is(.dark *){--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.dark\:text-yellow-400:is(.dark *){--tw-text-opacity:1;color:rgb(250 204 21 / var(--tw-text-opacity, 1))}.dark\:text-purple-400:is(.dark *){--tw-text-opacity:1;color:rgb(192 132 252 / var(--tw-text-opacity, 1))}.dark\:text-yellow-200:is(.dark *){--tw-text-opacity:1;color:rgb(254 240 138 / var(--tw-text-opacity, 1))}.dark\:shadow-card-dark:is(.dark *){--tw-shadow:0 1px 3px 0 rgba(0, 0, 0, 0.25), 0 1px 2px 0 rgba(0, 0, 0, 0.2);--tw-shadow-colored:0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.dark\:hover\:bg-gray-600:hover:is(.dark *){--tw-bg-opacity:1;background-color:rgb(75 85 99 / var(--tw-bg-opacity, 1))}.dark\:hover\:bg-gray-700:hover:is(.dark *){--tw-bg-opacity:1;background-color:rgb(55 65 81 / var(--tw-bg-opacity, 1))}.dark\:hover\:bg-blue-900\/50:hover:is(.dark *){background-color:rgb(30 58 138 / 0.5)}.dark\:hover\:bg-gray-600\/50:hover:is(.dark *){background-color:rgb(75 85 99 / 0.5)}.dark\:hover\:bg-purple-900\/50:hover:is(.dark *){background-color:rgb(88 28 135 / 0.5)}.dark\:hover\:text-blue-300:hover:is(.dark *){--tw-text-opacity:1;color:rgb(147 197 253 / var(--tw-text-opacity, 1))}.dark\:hover\:text-purple-300:hover:is(.dark *){--tw-text-opacity:1;color:rgb(216 180 254 / var(--tw-text-opacity, 1))}.dark\:hover\:shadow-lg:hover:is(.dark *){--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}@media (min-width: 640px){.sm\:inline{display:inline}.sm\:w-56{width:14rem}.sm\:w-auto{width:auto}.sm\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.sm\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.sm\:flex-row{flex-direction:row}.sm\:items-center{align-items:center}}@media (min-width: 768px){.md\:inline{display:inline}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:items-center{align-items:center}.md\:gap-3{gap:0.75rem}.md\:px-6{padding-left:1.5rem;padding-right:1.5rem}.md\:text-2xl{font-size:1.5rem;line-height:2rem}.md\:text-base{font-size:1rem;line-height:1.5rem}.md\:text-lg{font-size:1.125rem;line-height:1.75rem}.md\:text-sm{font-size:0.875rem;line-height:1.25rem}.md\:text-xl{font-size:1.25rem;line-height:1.75rem}.md\:text-xs{font-size:0.75rem;line-height:1rem}}@media (min-width: 1024px){.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}</style></head>
 <body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 font-sans antialiased light">
   <div class="min-h-screen flex flex-col">
     <div class="sticky-header border-b border-gray-200 dark:border-gray-700">
@@ -183,19 +289,19 @@
           </div>
           <div class="flex items-center space-x-2">
             <button id="themeToggle" class="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors btn-press">
-              <svg id="sunIcon" class="w-5 h-5 text-gray-700 dark:text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+              <svg id="sunIcon" class="w-5 h-5 text-gray-700 dark:text-yellow-400 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
               </svg>
-              <svg id="moonIcon" class="w-5 h-5 text-gray-700 dark:text-blue-400 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+              <svg id="moonIcon" class="w-5 h-5 text-gray-700 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
               </svg>
             </button>
             <button id="refreshBtn" class="flex items-center space-x-2 px-3 py-1.5 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors btn-press">
-              <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-              </svg>
-              <span class="hidden md:inline">Atualizar</span>
-            </button>
+          <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+          </svg>
+          <span class="hidden md:inline">Atualizar</span>
+        </button>
           </div>
         </div>
 
@@ -203,32 +309,32 @@
           <div class="bg-white dark:bg-gray-700 rounded-lg shadow-card dark:shadow-card-dark p-3 border-l-4 border-blue-500">
             <div>
               <p class="text-xs md:text-sm text-gray-500 dark:text-gray-300 font-medium">Total de AWBs</p>
-              <h3 class="text-xl md:text-2xl font-bold mt-1" id="totalAwbs">-</h3>
-              <p class="text-xs text-gray-500 dark:text-gray-400 mt-1" id="totalVariation">+2.5% vs mês passado</p>
+              <h3 class="text-xl md:text-2xl font-bold mt-1" id="totalAwbs">3</h3>
+              <p class="text-xs text-gray-500 dark:text-gray-400 mt-1" id="totalVariation">0.0% vs mês passado</p>
             </div>
           </div>
           
           <div class="bg-white dark:bg-gray-700 rounded-lg shadow-card dark:shadow-card-dark p-3 border-l-4 border-yellow-500">
             <div>
               <p class="text-xs md:text-sm text-gray-500 dark:text-gray-300 font-medium">Em Trânsito</p>
-              <h3 class="text-xl md:text-2xl font-bold mt-1" id="inTransit">-</h3>
-              <p class="text-xs text-gray-500 dark:text-gray-400 mt-1" id="transitTime">-</p>
+              <h3 class="text-xl md:text-2xl font-bold mt-1" id="inTransit">2</h3>
+              <p class="text-xs text-gray-500 dark:text-gray-400 mt-1" id="transitTime">0 atrasados | Média: 2d</p>
             </div>
           </div>
           
           <div class="bg-white dark:bg-gray-700 rounded-lg shadow-card dark:shadow-card-dark p-3 border-l-4 border-green-500">
             <div>
               <p class="text-xs md:text-sm text-gray-500 dark:text-gray-300 font-medium">Disponíveis</p>
-              <h3 class="text-xl md:text-2xl font-bold mt-1" id="available">-</h3>
-              <p class="text-xs text-gray-500 dark:text-gray-400 mt-1" id="availableDays"></p>
+              <h3 class="text-xl md:text-2xl font-bold mt-1" id="available">0</h3>
+              <p class="text-xs text-gray-500 dark:text-gray-400 mt-1" id="availableDays">0 há +1 dias</p>
             </div>
           </div>
 
           <div class="bg-white dark:bg-gray-700 rounded-lg shadow-card dark:shadow-card-dark p-3 border-l-4 border-purple-500">
             <div>
               <p class="text-xs md:text-sm text-gray-500 dark:text-gray-300 font-medium">Outros Status</p>
-              <h3 class="text-xl md:text-2xl font-bold mt-1" id="otherStatus">-</h3>
-              <p class="text-xs text-gray-500 dark:text-gray-400 mt-1" id="otherDetails">3 coletas parciais</p>
+              <h3 class="text-xl md:text-2xl font-bold mt-1" id="otherStatus">1</h3>
+              <p class="text-xs text-gray-500 dark:text-gray-400 mt-1" id="otherDetails">Sem status especiais</p>
             </div>
           </div>
         </div>
@@ -237,10 +343,10 @@
 
     <main class="flex-1 overflow-y-auto pt-2 pb-4">
       <div class="mobile-padding">
-        <div id="loading" class="flex flex-col items-center justify-center py-8 mb-4 transition-opacity duration-300">
+        <div id="loading" class="flex flex-col items-center justify-center py-8 mb-4 transition-opacity duration-300" style="opacity: 0; display: none;">
           <div class="relative">
             <svg class="w-14 h-14 text-blue-500 dark:text-blue-400 animate-fly mb-3" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M2.01 21l20.99-9L2.01 3 2 10l15 2-15 2z" />
+              <path d="M2.01 21l20.99-9L2.01 3 2 10l15 2-15 2z"></path>
             </svg>
             <div class="absolute -inset-3 border-4 border-blue-200 dark:border-blue-900 rounded-full animate-ping opacity-75"></div>
           </div>
@@ -248,86 +354,486 @@
           <p class="text-sm md:text-base text-gray-500 dark:text-gray-300 mt-1 text-center">Aguarde enquanto buscamos as informações mais recentes</p>
         </div>
 
-        <div id="alertsContainer" class="mb-4 space-y-2">
+        <div id="alertsContainer" class="mb-4 space-y-2"></div>
+
+        <!-- Navegação entre as abas -->
+        <div class="flex border-b border-gray-200 dark:border-gray-700 mb-4">
+          <button id="tabMain" class="tab-button">Painel Principal</button>
+          <button id="tabHistory" class="tab-button active">Histórico e Gráficos</button>
         </div>
 
-        <div class="bg-white dark:bg-gray-700 rounded-xl shadow-card dark:shadow-card-dark overflow-hidden mode-transition">
-          <div class="px-4 md:px-6 py-3 border-b border-gray-200 dark:border-gray-600 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
-            <div>
-              <h2 class="text-lg md:text-xl font-semibold text-gray-800 dark:text-gray-100">Histórico de AWBs</h2>
-              <p class="text-xs md:text-sm text-gray-500 dark:text-gray-300" id="lastUpdate">Última atualização: -</p>
-            </div>
-            <div class="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
-              <div class="relative w-full sm:w-56">
-                <input type="text" id="searchInput" placeholder="Pesquisar (digite números)" 
-                      class="w-full px-3 py-1.5 text-sm rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                <svg class="absolute right-2.5 top-2 h-4 w-4 text-gray-400 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
+        <!-- Conteúdo do Painel Principal -->
+        <div id="mainContent" class="hidden">
+          <div class="bg-white dark:bg-gray-700 rounded-xl shadow-card dark:shadow-card-dark overflow-hidden mode-transition">
+            <div class="px-4 md:px-6 py-3 border-b border-gray-200 dark:border-gray-600 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+              <div>
+                <h2 class="text-lg md:text-xl font-semibold text-gray-800 dark:text-gray-100">Painel de AWBs</h2>
+                <p class="text-xs md:text-sm text-gray-500 dark:text-gray-300" id="lastUpdate">Última atualização: 22:09:01</p>
               </div>
-              <div class="relative">
-                <button id="viewToggle" class="flex items-center space-x-1.5 px-3 py-1.5 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors btn-press">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+              <div class="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
+                <div class="relative w-full sm:w-56">
+                  <input type="text" id="searchInput" placeholder="Pesquisar (digite números)" class="w-full px-3 py-1.5 text-sm rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                  <svg class="absolute right-2.5 top-2 h-4 w-4 text-gray-400 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                   </svg>
-                  <span class="hidden sm:inline text-sm">Visualização</span>
-                </button>
-                <div id="viewDropdown" class="hidden absolute right-0 mt-1 w-40 bg-white dark:bg-gray-700 rounded-md shadow-lg z-10 border border-gray-200 dark:border-gray-600">
-                  <div class="py-1">
-                    <button class="view-option block w-full text-left px-3 py-1.5 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors" data-view="table">
-                      <div class="flex items-center space-x-2">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                        </svg>
-                        <span>Tabela</span>
-                      </div>
-                    </button>
-                    <button class="view-option block w-full text-left px-3 py-1.5 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors" data-view="cards">
-                      <div class="flex items-center space-x-2">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
-                        </svg>
-                        <span>Cards</span>
-                      </div>
-                    </button>
+                </div>
+                <div class="relative">
+                  <button id="viewToggle" class="flex items-center space-x-1.5 px-3 py-1.5 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors btn-press">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
+                    </svg>
+                    <span class="hidden sm:inline text-sm">Visualização</span>
+                  </button>
+                  <div id="viewDropdown" class="hidden absolute right-0 mt-1 w-40 bg-white dark:bg-gray-700 rounded-md shadow-lg z-10 border border-gray-200 dark:border-gray-600">
+                    <div class="py-1">
+                      <button class="view-option block w-full text-left px-3 py-1.5 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors" data-view="table">
+                        <div class="flex items-center space-x-2">
+                          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                          </svg>
+                          <span>Tabela</span>
+                        </div>
+                      </button>
+                      <button class="view-option block w-full text-left px-3 py-1.5 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors" data-view="cards">
+                        <div class="flex items-center space-x-2">
+                          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+                          </svg>
+                          <span>Cards</span>
+                        </div>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          
-          <div id="tableView" class="overflow-x-auto scrollbar-hide">
-            <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-600" id="awbTable">
-              <thead class="bg-gray-50 dark:bg-gray-600">
-                <tr>
-                  <th scope="col" class="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Fornecedor</th>
-                  <th scope="col" class="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Saída</th>
-                  <th scope="col" class="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">NF's</th>
-                  <th scope="col" class="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">AWB</th>
-                  <th scope="col" class="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Status</th>
-                  <th scope="col" class="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Chegada</th>
-                  <th scope="col" class="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Marca</th>
-                  <th scope="col" class="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Material</th>
-                  <th scope="col" class="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Observação</th>
-                  <th scope="col" class="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Rastreio</th>
-                  <th scope="col" class="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Documentos</th>
-                </tr>
-              </thead>
-              <tbody id="tableBody" class="bg-white dark:bg-gray-700 divide-y divide-gray-200 dark:divide-gray-600">
-              </tbody>
-            </table>
-          </div>
-          
-          <div id="cardsView" class="hidden p-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-          </div>
-          
-          <div class="px-4 md:px-6 py-3 border-t border-gray-200 dark:border-gray-600 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs md:text-sm text-gray-500 dark:text-gray-300">
-            <div id="tableInfo">Mostrando 0 de 0 registros</div>
-            <div class="flex items-center space-x-2">
-              <button id="prevPage" class="px-2.5 py-1 rounded border border-gray-300 dark:border-gray-600 disabled:opacity-50 transition-colors btn-press" disabled>Anterior</button>
-              <span id="pageInfo">Página 1</span>
-              <button id="nextPage" class="px-2.5 py-1 rounded border border-gray-300 dark:border-gray-600 disabled:opacity-50 transition-colors btn-press" disabled>Próxima</button>
+            
+            <div id="tableView" class="overflow-x-auto scrollbar-hide hidden">
+              <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-600" id="awbTable">
+                <thead class="bg-gray-50 dark:bg-gray-600">
+                  <tr>
+                    <th scope="col" class="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Fornecedor</th>
+                    <th scope="col" class="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Saída</th>
+                    <th scope="col" class="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">NF's</th>
+                    <th scope="col" class="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">AWB</th>
+                    <th scope="col" class="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Status</th>
+                    <th scope="col" class="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Chegada</th>
+                    <th scope="col" class="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Marca</th>
+                    <th scope="col" class="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Material</th>
+                    <th scope="col" class="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Observação</th>
+                    <th scope="col" class="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Rastreio</th>
+                    <th scope="col" class="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Documentos</th>
+                  </tr>
+                </thead>
+                <tbody id="tableBody" class="bg-white dark:bg-gray-700 divide-y divide-gray-200 dark:divide-gray-600"><tr class="mode-transition hover:bg-gray-50 dark:hover:bg-gray-600/50">
+            <td class="px-4 py-2 whitespace-nowrap">
+              <div class="text-xs md:text-sm font-medium text-gray-900 dark:text-gray-100">TECELAGEM</div>
+            </td>
+            <td class="px-4 py-2 whitespace-nowrap">
+              <div class="text-xs md:text-sm text-gray-500 dark:text-gray-300">15/08/2025</div>
+            </td>
+            <td class="px-4 py-2 whitespace-nowrap">
+              <div class="text-xs md:text-sm text-gray-900 dark:text-gray-200 font-mono">NF 31164 / 31188</div>
+            </td>
+            <td class="px-4 py-2 whitespace-nowrap">
+              <div class="text-xs md:text-sm font-medium text-blue-600 dark:text-blue-400 font-mono">57751042725</div>
+            </td>
+            <td class="px-4 py-2 whitespace-nowrap">
+              <span class="bg-gray-100 dark:bg-gray-500 text-gray-800 dark:text-gray-200 status-badge">COLETADO</span>
+            </td>
+            <td class="px-4 py-2 whitespace-nowrap">
+              <div class="text-xs md:text-sm text-gray-900 dark:text-gray-200">-</div>
+            </td>
+            <td class="px-4 py-2 whitespace-nowrap">
+              <div class="text-xs md:text-sm text-gray-900 dark:text-gray-200">FILA</div>
+            </td>
+            <td class="px-4 py-2 whitespace-nowrap">
+              <div class="text-xs md:text-sm text-gray-900 dark:text-gray-200">CAIXA</div>
+            </td>
+            <td class="px-4 py-2 whitespace-normal">
+              <div class="text-xs md:text-sm text-gray-900 dark:text-gray-200">COLETADO POR SEST CHEGA 29-08 no carro da rota</div>
+            </td>
+            <td class="px-4 py-2 whitespace-nowrap">
+              <a href="https://www.azulcargoexpress.com.br/rastreio" target="_blank" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 group transition-colors">
+                <span class="text-xs md:text-sm">Rastrear</span>
+                <svg class="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+              </a>
+            </td>
+            <td class="px-4 py-2 whitespace-nowrap space-y-1">
+              
+                <a href="https://drive.google.com/file/d/1kNxRjCIoBa4gJLVOtio3D9zCYBnvToHC/view?usp=drivesdk" target="_blank" class="inline-flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 group transition-colors">
+                  <span>NF 31164</span>
+                  <svg class="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                </a>
+              <br>
+                <a href="https://drive.google.com/file/d/1C4OwmBqK-ow3S2DDww2lCEIJ5G2ZShZ0/view?usp=drivesdk" target="_blank" class="inline-flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 group transition-colors">
+                  <span>31188</span>
+                  <svg class="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                </a>
+              
+            </td>
+          </tr><tr class="mode-transition hover:bg-gray-50 dark:hover:bg-gray-600/50">
+            <td class="px-4 py-2 whitespace-nowrap">
+              <div class="text-xs md:text-sm font-medium text-gray-900 dark:text-gray-100">TECELAGEM E A BUHLER</div>
+            </td>
+            <td class="px-4 py-2 whitespace-nowrap">
+              <div class="text-xs md:text-sm text-gray-500 dark:text-gray-300">28/08/2025</div>
+            </td>
+            <td class="px-4 py-2 whitespace-nowrap">
+              <div class="text-xs md:text-sm text-gray-900 dark:text-gray-200 font-mono">31189 31217 31215 31224 166954</div>
+            </td>
+            <td class="px-4 py-2 whitespace-nowrap">
+              <div class="text-xs md:text-sm font-medium text-blue-600 dark:text-blue-400 font-mono">57752320472</div>
+            </td>
+            <td class="px-4 py-2 whitespace-nowrap">
+              <span class="bg-yellow-100 dark:bg-yellow-900/50 text-yellow-800 dark:text-yellow-200 status-badge">EM TRÂNSITO</span>
+            </td>
+            <td class="px-4 py-2 whitespace-nowrap">
+              <div class="text-xs md:text-sm text-gray-900 dark:text-gray-200">01/09/2025</div>
+            </td>
+            <td class="px-4 py-2 whitespace-nowrap">
+              <div class="text-xs md:text-sm text-gray-900 dark:text-gray-200">FILA E UMBRO</div>
+            </td>
+            <td class="px-4 py-2 whitespace-nowrap">
+              <div class="text-xs md:text-sm text-gray-900 dark:text-gray-200">CAIXAS E ROLOS</div>
+            </td>
+            <td class="px-4 py-2 whitespace-normal">
+              <div class="text-xs md:text-sm text-gray-900 dark:text-gray-200">-</div>
+            </td>
+            <td class="px-4 py-2 whitespace-nowrap">
+              <a href="https://www.azulcargoexpress.com.br/rastreio" target="_blank" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 group transition-colors">
+                <span class="text-xs md:text-sm">Rastrear</span>
+                <svg class="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+              </a>
+            </td>
+            <td class="px-4 py-2 whitespace-nowrap space-y-1">
+              
+                <a href="https://drive.google.com/file/d/1_MYik2h7B6jYQUp49ZxeqK1RYGPNCPYl/view?usp=drivesdk" target="_blank" class="inline-flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 group transition-colors">
+                  <span>31189 31217 31215 31224 166954</span>
+                  <svg class="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                </a>
+              <br>
+                <a href="https://drive.google.com/file/d/1rXsnSDLn3zEJJ-6WTX6nswLYb4N890t_/view?usp=drivesdk" target="_blank" class="inline-flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 group transition-colors">
+                  <span>NF 2</span>
+                  <svg class="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                </a>
+              <br>
+                <a href="https://drive.google.com/file/d/1WE9owMNAEUgZ36znIbfaTgcK51Go-txe/view?usp=drivesdk" target="_blank" class="inline-flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 group transition-colors">
+                  <span>NF 3</span>
+                  <svg class="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                </a>
+              <br>
+                <a href="https://drive.google.com/file/d/1YFjwvrY-22gnlozPVLtjyHNCeDnzIVIR/view?usp=drivesdk" target="_blank" class="inline-flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 group transition-colors">
+                  <span>NF 4</span>
+                  <svg class="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                </a>
+              <br>
+                <a href="https://drive.google.com/file/d/10Su25ClrJZdJX9v75IAwzyo5gHA9FQz4/view?usp=drivesdk" target="_blank" class="inline-flex items-center text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 group transition-colors">
+                  <span>NF 5</span>
+                  <svg class="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                </a>
+              
+            </td>
+          </tr><tr class="mode-transition hover:bg-gray-50 dark:hover:bg-gray-600/50">
+            <td class="px-4 py-2 whitespace-nowrap">
+              <div class="text-xs md:text-sm font-medium text-gray-900 dark:text-gray-100">LINHANYL S/A</div>
+            </td>
+            <td class="px-4 py-2 whitespace-nowrap">
+              <div class="text-xs md:text-sm text-gray-500 dark:text-gray-300">28/08/2025</div>
+            </td>
+            <td class="px-4 py-2 whitespace-nowrap">
+              <div class="text-xs md:text-sm text-gray-900 dark:text-gray-200 font-mono">NF 394296</div>
+            </td>
+            <td class="px-4 py-2 whitespace-nowrap">
+              <div class="text-xs md:text-sm font-medium text-blue-600 dark:text-blue-400 font-mono">12755640001</div>
+            </td>
+            <td class="px-4 py-2 whitespace-nowrap">
+              <span class="bg-yellow-100 dark:bg-yellow-900/50 text-yellow-800 dark:text-yellow-200 status-badge">EM TRÂNSITO</span>
+            </td>
+            <td class="px-4 py-2 whitespace-nowrap">
+              <div class="text-xs md:text-sm text-gray-900 dark:text-gray-200">-</div>
+            </td>
+            <td class="px-4 py-2 whitespace-nowrap">
+              <div class="text-xs md:text-sm text-gray-900 dark:text-gray-200">FILA</div>
+            </td>
+            <td class="px-4 py-2 whitespace-nowrap">
+              <div class="text-xs md:text-sm text-gray-900 dark:text-gray-200">CAIXA</div>
+            </td>
+            <td class="px-4 py-2 whitespace-normal">
+              <div class="text-xs md:text-sm text-gray-900 dark:text-gray-200">AWB DIRECIONADA PARA VDC</div>
+            </td>
+            <td class="px-4 py-2 whitespace-nowrap">
+              <a href="https://servicos.gollog.com.br/app/main/tracking" target="_blank" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 group transition-colors">
+                <span class="text-xs md:text-sm">Rastrear</span>
+                <svg class="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+              </a>
+            </td>
+            <td class="px-4 py-2 whitespace-nowrap space-y-1">
+              -
+            </td>
+          </tr></tbody>
+              </table>
             </div>
+            
+            <div id="cardsView" class="p-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"><div class="bg-white dark:bg-gray-700 rounded-lg shadow-card dark:shadow-card-dark overflow-hidden mode-transition hover:shadow-md dark:hover:shadow-lg transition-shadow">
+            <div class="p-3 border-b border-gray-200 dark:border-gray-600">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="text-sm md:text-base font-semibold text-gray-800 dark:text-gray-100">57751042725</h3>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">TECELAGEM</p>
+                </div>
+                <span class="bg-gray-100 dark:bg-gray-500 text-gray-800 dark:text-gray-200 status-badge">COLETADO</span>
+              </div>
+            </div>
+            <div class="p-3">
+              <div class="grid grid-cols-2 gap-3 mb-2">
+                <div>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">Saída</p>
+                  <p class="text-xs md:text-sm font-medium">15/08/2025</p>
+                </div>
+                <div>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">Chegada</p>
+                  <p class="text-xs md:text-sm font-medium">-</p>
+                </div>
+              </div>
+              <div class="mb-2">
+                <p class="text-xs text-gray-500 dark:text-gray-400">NF's</p>
+                <p class="text-xs md:text-sm font-mono">NF 31164 / 31188</p>
+              </div>
+              <div class="mb-3">
+                <p class="text-xs text-gray-500 dark:text-gray-400">Marca/Material</p>
+                <p class="text-xs md:text-sm">FILA / CAIXA</p>
+              </div>
+              <div class="mb-3">
+                <p class="text-xs text-gray-500 dark:text-gray-400">Observação</p>
+                <p class="text-xs md:text-sm">COLETADO POR SEST CHEGA 29-08 no carro da rota</p>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <a href="https://www.azulcargoexpress.com.br/rastreio" target="_blank" class="flex-1 px-2 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs md:text-sm rounded-md text-center hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors btn-press">
+                  Rastrear
+                </a>
+                
+                <button onclick="window.openMultipleTabs([&#39;https://drive.google.com/file/d/1kNxRjCIoBa4gJLVOtio3D9zCYBnvToHC/view?usp=drivesdk&#39;,&#39;https://drive.google.com/file/d/1C4OwmBqK-ow3S2DDww2lCEIJ5G2ZShZ0/view?usp=drivesdk&#39;])" class="flex items-center justify-center flex-1 px-2 py-1 bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 text-xs md:text-sm rounded-md hover:bg-purple-100 dark:hover:bg-purple-900/50 transition-colors btn-press">
+                   Docs <span class="ml-1 text-xxs md:text-xs bg-purple-100 dark:bg-purple-800/50 rounded-full px-1.5 py-0.5">2</span>
+                </button>
+                
+              </div>
+            </div>
+          </div><div class="bg-white dark:bg-gray-700 rounded-lg shadow-card dark:shadow-card-dark overflow-hidden mode-transition hover:shadow-md dark:hover:shadow-lg transition-shadow">
+            <div class="p-3 border-b border-gray-200 dark:border-gray-600">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="text-sm md:text-base font-semibold text-gray-800 dark:text-gray-100">57752320472</h3>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">TECELAGEM E A BUHLER</p>
+                </div>
+                <span class="bg-yellow-100 dark:bg-yellow-900/50 text-yellow-800 dark:text-yellow-200 status-badge">EM TRÂNSITO</span>
+              </div>
+            </div>
+            <div class="p-3">
+              <div class="grid grid-cols-2 gap-3 mb-2">
+                <div>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">Saída</p>
+                  <p class="text-xs md:text-sm font-medium">28/08/2025</p>
+                </div>
+                <div>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">Chegada</p>
+                  <p class="text-xs md:text-sm font-medium">01/09/2025</p>
+                </div>
+              </div>
+              <div class="mb-2">
+                <p class="text-xs text-gray-500 dark:text-gray-400">NF's</p>
+                <p class="text-xs md:text-sm font-mono">31189 31217 31215 31224 166954</p>
+              </div>
+              <div class="mb-3">
+                <p class="text-xs text-gray-500 dark:text-gray-400">Marca/Material</p>
+                <p class="text-xs md:text-sm">FILA E UMBRO / CAIXAS E ROLOS</p>
+              </div>
+              <div class="mb-3">
+                <p class="text-xs text-gray-500 dark:text-gray-400">Observação</p>
+                <p class="text-xs md:text-sm">-</p>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <a href="https://www.azulcargoexpress.com.br/rastreio" target="_blank" class="flex-1 px-2 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs md:text-sm rounded-md text-center hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors btn-press">
+                  Rastrear
+                </a>
+                
+                <button onclick="window.openMultipleTabs([&#39;https://drive.google.com/file/d/1_MYik2h7B6jYQUp49ZxeqK1RYGPNCPYl/view?usp=drivesdk&#39;,&#39;https://drive.google.com/file/d/1rXsnSDLn3zEJJ-6WTX6nswLYb4N890t_/view?usp=drivesdk&#39;,&#39;https://drive.google.com/file/d/1WE9owMNAEUgZ36znIbfaTgcK51Go-txe/view?usp=drivesdk&#39;,&#39;https://drive.google.com/file/d/1YFjwvrY-22gnlozPVLtjyHNCeDnzIVIR/view?usp=drivesdk&#39;,&#39;https://drive.google.com/file/d/10Su25ClrJZdJX9v75IAwzyo5gHA9FQz4/view?usp=drivesdk&#39;])" class="flex items-center justify-center flex-1 px-2 py-1 bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 text-xs md:text-sm rounded-md hover:bg-purple-100 dark:hover:bg-purple-900/50 transition-colors btn-press">
+                   Docs <span class="ml-1 text-xxs md:text-xs bg-purple-100 dark:bg-purple-800/50 rounded-full px-1.5 py-0.5">5</span>
+                </button>
+                
+              </div>
+            </div>
+          </div><div class="bg-white dark:bg-gray-700 rounded-lg shadow-card dark:shadow-card-dark overflow-hidden mode-transition hover:shadow-md dark:hover:shadow-lg transition-shadow">
+            <div class="p-3 border-b border-gray-200 dark:border-gray-600">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="text-sm md:text-base font-semibold text-gray-800 dark:text-gray-100">12755640001</h3>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">LINHANYL S/A</p>
+                </div>
+                <span class="bg-yellow-100 dark:bg-yellow-900/50 text-yellow-800 dark:text-yellow-200 status-badge">EM TRÂNSITO</span>
+              </div>
+            </div>
+            <div class="p-3">
+              <div class="grid grid-cols-2 gap-3 mb-2">
+                <div>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">Saída</p>
+                  <p class="text-xs md:text-sm font-medium">28/08/2025</p>
+                </div>
+                <div>
+                  <p class="text-xs text-gray-500 dark:text-gray-400">Chegada</p>
+                  <p class="text-xs md:text-sm font-medium">-</p>
+                </div>
+              </div>
+              <div class="mb-2">
+                <p class="text-xs text-gray-500 dark:text-gray-400">NF's</p>
+                <p class="text-xs md:text-sm font-mono">NF 394296</p>
+              </div>
+              <div class="mb-3">
+                <p class="text-xs text-gray-500 dark:text-gray-400">Marca/Material</p>
+                <p class="text-xs md:text-sm">FILA / CAIXA</p>
+              </div>
+              <div class="mb-3">
+                <p class="text-xs text-gray-500 dark:text-gray-400">Observação</p>
+                <p class="text-xs md:text-sm">AWB DIRECIONADA PARA VDC</p>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <a href="https://servicos.gollog.com.br/app/main/tracking" target="_blank" class="flex-1 px-2 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs md:text-sm rounded-md text-center hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors btn-press">
+                  Rastrear
+                </a>
+                
+              </div>
+            </div>
+          </div></div>
+            
+            <div class="px-4 md:px-6 py-3 border-t border-gray-200 dark:border-gray-600 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs md:text-sm text-gray-500 dark:text-gray-300">
+              <div id="tableInfo">Mostrando 1-3 de 3 registros</div>
+              <div class="flex items-center space-x-2">
+                <button id="prevPage" class="px-2.5 py-1 rounded border border-gray-300 dark:border-gray-600 disabled:opacity-50 transition-colors btn-press" disabled="">Anterior</button>
+                <span id="pageInfo">Página 1 de 1</span>
+                <button id="nextPage" class="px-2.5 py-1 rounded border border-gray-300 dark:border-gray-600 disabled:opacity-50 transition-colors btn-press" disabled="">Próxima</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Conteúdo do Histórico e Gráficos -->
+        <div id="historyContent" class="">
+          <div class="bg-white dark:bg-gray-700 rounded-xl shadow-card dark:shadow-card-dark overflow-hidden mode-transition p-4 mb-4">
+            <h2 class="text-lg md:text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4">Análise Histórica</h2>
+            
+            <div class="chart-controls">
+              <div class="chart-control">
+                <label for="timeRange">Período</label>
+                <select id="timeRange">
+                  <option value="1">Últimos  mês</option>
+                  <option value="2">Últimos 2 meses</option>
+                  <option value="3">Últimos 3 meses</option>
+                  <option value="6" selected="">Últimos 6 meses</option>
+                  <option value="7">Últimos 7 meses</option>
+                  <option value="8">Últimos 8 meses</option>
+                  <option value="9">Últimos 9 meses</option>
+                  <option value="10">Últimos 10 meses</option>
+                  <option value="11">Últimos 11 meses</option>
+                  <option value="12">Últimos 12 meses</option>
+                </select>
+              </div>
+              
+              <div class="chart-control">
+                <label for="chartType">Tipo de Gráfico</label>
+                <select id="chartType">
+                  <option value="bar" selected="">Barras</option>
+                  <option value="line">Linhas</option>
+                </select>
+              </div>
+              
+              <div class="chart-control">
+                <label for="dataGroup">Agrupar por</label>
+                <select id="dataGroup">
+                  <option value="status">Status</option>
+                  <option value="marca" selected="">Marca</option>
+                  <option value="fornecedor">Fornecedor</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
+              <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                <h3 class="text-md font-medium text-gray-800 dark:text-gray-200 mb-3">Evolução Mensal Por Marca, Fornecedor e Status OK</h3>
+                <div class="chart-container">
+                  <canvas id="monthlyTrendChart" style="box-sizing: border-box; display: block; height: 300px; width: 902px;" width="1804" height="600"></canvas>
+                </div>
+              </div>
+              
+              <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                <h3 class="text-md font-medium text-gray-800 dark:text-gray-200 mb-3">Distribuição Por Marca, Fornecedor e Status OK</h3>
+                <div class="chart-container">
+                  <canvas id="distributionChart" style="box-sizing: border-box; display: block; height: 300px; width: 902px;" width="1804" height="600"></canvas>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+              <h3 class="text-md font-medium text-gray-800 dark:text-gray-200 mb-3">Comparativo Detalhado</h3>
+              <div class="chart-container">
+                <canvas id="comparisonChart" style="box-sizing: border-box; display: block; height: 300px; width: 902px;" width="1804" height="600"></canvas>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-700 rounded-xl shadow-card dark:shadow-card-dark overflow-hidden mode-transition p-4">
+            <h2 class="text-lg md:text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4">Estatísticas Detalhadas por Marca</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="statsCards"><div class="p-4 rounded-lg bg-blue-100 dark:bg-blue-900/30">
+          <div class="flex items-start justify-between">
+            <div>
+              <p class="text-sm font-medium text-gray-600 dark:text-gray-300">Total no Mês</p>
+              <h3 class="text-2xl font-bold mt-1">44</h3>
+              <p class="text-xs mt-1 text-gray-500 dark:text-gray-400">10.0</p>
+              <p class="text-xs mt-1 text-gray-500 dark:text-gray-400">Em comparação com 40 no mês anterior</p>
+            </div>
+            <span class="text-2xl">📊</span>
+          </div>
+        </div><div class="p-4 rounded-lg bg-green-100 dark:bg-green-900/30">
+          <div class="flex items-start justify-between">
+            <div>
+              <p class="text-sm font-medium text-gray-600 dark:text-gray-300">Maior Crescimento</p>
+              <h3 class="text-2xl font-bold mt-1">+45.5%</h3>
+              <p class="text-xs mt-1 text-gray-500 dark:text-gray-400">ASICS</p>
+              <p class="text-xs mt-1 text-gray-500 dark:text-gray-400">Categoria: ASICS</p>
+            </div>
+            <span class="text-2xl">📈</span>
+          </div>
+        </div><div class="p-4 rounded-lg bg-yellow-100 dark:bg-yellow-900/30">
+          <div class="flex items-start justify-between">
+            <div>
+              <p class="text-sm font-medium text-gray-600 dark:text-gray-300">Maior Volume</p>
+              <h3 class="text-2xl font-bold mt-1">24</h3>
+              <p class="text-xs mt-1 text-gray-500 dark:text-gray-400">FILA</p>
+              <p class="text-xs mt-1 text-gray-500 dark:text-gray-400">Categoria com mais registros</p>
+            </div>
+            <span class="text-2xl">🏆</span>
+          </div>
+        </div></div>
           </div>
         </div>
       </div>
@@ -336,7 +842,7 @@
     <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 p-3">
       <div class="flex flex-col items-center text-center">
         <div class="text-xs md:text-sm text-gray-500 dark:text-gray-400 mb-1">
-          &copy; 2025 Equipe PCP - Planejamento e Controle de Produção
+          © 2025 Equipe PCP - Planejamento e Controle de Produção
         </div>
         <div class="flex flex-col sm:flex-row gap-2 text-xs md:text-sm text-gray-500 dark:text-gray-400">
           <div>Contato: Ramal 8264 ou 8271</div>
@@ -349,6 +855,7 @@
   <script>
     const API_URL = "https://script.google.com/macros/s/AKfycbxukDp2YAsO9eHjZ_IPb9ClSy7kSUwA8ZPSk3J427q8talXXPlUnAnuCZYNX-Ddubed/exec";
     let allData = [];
+    let allDataWithOK = []; // Para armazenar dados completos incluindo "OK"
     let currentPage = 1;
     const rowsPerPage = 10;
     let filteredData = [];
@@ -356,6 +863,11 @@
     let searchTimeout = null;
     let cachedData = null;
     const CACHE_DURATION = 5 * 60 * 1000; // 5 minutos em milissegundos
+
+    // Variáveis para os gráficos
+    let monthlyTrendChart = null;
+    let distributionChart = null;
+    let comparisonChart = null;
 
     // helpers para normalizar
     const norm   = v => (v == null ? '' : String(v)).toLowerCase();
@@ -575,7 +1087,7 @@
       const alertsContainer = document.getElementById("alertsContainer");
       alertsContainer.innerHTML = "";
 
-      // Alerta para coletas parciais
+      // Alerta para coletas parcial
       const { partialCount } = calculateOtherStatus(data);
       if (partialCount > 0) {
         const alert = document.createElement("div");
@@ -759,7 +1271,7 @@
                 <span class="text-xs md:text-sm">Rastrear</span>
                 <svg class="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
+                  </svg>
               </a>
             </td>
             <td class="px-4 py-2 whitespace-nowrap space-y-1">
@@ -961,6 +1473,7 @@
         if (cachedData && (now - cachedData.timestamp) < CACHE_DURATION) {
           // Usar dados do cache
           allData = cachedData.data;
+          allDataWithOK = cachedData.dataWithOK || [];
           filteredData = [...allData];
           
           updateView(filteredData);
@@ -1009,6 +1522,9 @@
           throw new Error("Formato de dados inválido");
         }
         
+        // Armazenar dados completos (com OK)
+        allDataWithOK = rawData;
+
         // Filtrar para trazer apenas os itens com status diferente de "OK"
         allData = rawData.filter(item => {
           const status = item.STATUS?.toString().toUpperCase();
@@ -1020,6 +1536,7 @@
         // Armazenar em cache
         cachedData = {
           data: allData,
+          dataWithOK: allDataWithOK,
           timestamp: Date.now()
         };
         localStorage.setItem('awbCache', JSON.stringify(cachedData));
@@ -1105,6 +1622,7 @@
           const now = Date.now();
           if (now - cachedData.timestamp < CACHE_DURATION) {
             allData = cachedData.data;
+            allDataWithOK = cachedData.dataWithOK || [];
             filteredData = [...allData];
             updateView(filteredData);
             createAlerts(allData);
@@ -1115,6 +1633,389 @@
           console.error("Erro ao carregar dados do cache:", e);
         }
       }
+    }
+
+    // Funções para os gráficos e análise histórica
+    function prepareHistoricalData(data, months = 6, limit = 5) {
+      const now = new Date();
+      const historicalData = {
+        labels: [],
+        datasets: {}
+      };
+      
+      // Gerar labels dos últimos meses
+      for (let i = months - 1; i >= 0; i--) {
+        const date = new Date(now.getFullYear(), now.getMonth() - i, 1);
+        const monthYear = date.toLocaleDateString('pt-BR', { month: 'short', year: 'numeric' });
+        historicalData.labels.push(monthYear);
+      }
+      
+      // Agrupar dados por status, marca ou fornecedor
+      const dataByCategory = {};
+      const dataByMonth = {};
+      
+      data.forEach(item => {
+        if (!item["DATA DE SAIDA"]) return;
+        
+        const itemDate = new Date(item["DATA DE SAIDA"]);
+        const monthYearKey = itemDate.toLocaleDateString('pt-BR', { month: 'short', year: 'numeric' });
+        
+        // Verificar se está dentro do período selecionado
+        const monthDiff = (now.getFullYear() - itemDate.getFullYear()) * 12 + (now.getMonth() - itemDate.getMonth());
+        if (monthDiff >= months || monthDiff < 0) return;
+        
+        // Categoria baseada no selecionado
+        const category = document.getElementById('dataGroup').value;
+        let categoryValue = '';
+        
+        if (category === 'status') {
+          categoryValue = item.STATUS || 'Sem Status';
+        } else if (category === 'marca') {
+          categoryValue = item.MARCA || 'Sem Marca';
+        } else if (category === 'fornecedor') {
+          categoryValue = item.FORNECEDOR || 'Sem Fornecedor';
+        }
+        
+        // Inicializar estruturas se necessário
+        if (!dataByCategory[categoryValue]) {
+          dataByCategory[categoryValue] = {};
+          historicalData.datasets[categoryValue] = new Array(months).fill(0);
+        }
+        
+        if (!dataByMonth[monthYearKey]) {
+          dataByMonth[monthYearKey] = {};
+        }
+        
+        if (!dataByMonth[monthYearKey][categoryValue]) {
+          dataByMonth[monthYearKey][categoryValue] = 0;
+        }
+        
+        // Contabilizar
+        dataByMonth[monthYearKey][categoryValue]++;
+      });
+      
+      // Preencher dados para cada categoria
+      historicalData.labels.forEach((month, index) => {
+        Object.keys(dataByCategory).forEach(category => {
+          if (dataByMonth[month] && dataByMonth[month][category]) {
+            historicalData.datasets[category][index] = dataByMonth[month][category];
+          }
+        });
+      });
+      
+      // Limitar para as top categorias (5 maiores por volume total)
+      if (limit > 0) {
+        // Calcular totais por categoria
+        const categoryTotals = {};
+        Object.keys(historicalData.datasets).forEach(category => {
+          categoryTotals[category] = historicalData.datasets[category].reduce((a, b) => a + b, 0);
+        });
+        
+        // Ordenar categorias por total (decrescente) e pegar as top 'limit'
+        const topCategories = Object.keys(categoryTotals)
+          .sort((a, b) => categoryTotals[b] - categoryTotals[a])
+          .slice(0, limit);
+        
+        // Filtrar datasets para incluir apenas as top categories
+        const filteredDatasets = {};
+        topCategories.forEach(category => {
+          filteredDatasets[category] = historicalData.datasets[category];
+        });
+        historicalData.datasets = filteredDatasets;
+      }
+      
+      return historicalData;
+    }
+
+    function updateCharts(data) {
+      const months = parseInt(document.getElementById('timeRange').value);
+      const chartType = document.getElementById('chartType').value;
+      
+      // Filtrar apenas os itens com status "OK"
+      const okData = data.filter(item => {
+        const status = item.STATUS?.toString().toUpperCase();
+        return status === "OK";
+      });
+      
+      const historicalData = prepareHistoricalData(okData, months, 5); // 5 maiores
+      
+      // Cores para os gráficos
+      const backgroundColors = [
+        'rgba(54, 162, 235, 0.7)',
+        'rgba(255, 99, 132, 0.7)',
+        'rgba(255, 206, 86, 0.7)',
+        'rgba(75, 192, 192, 0.7)',
+        'rgba(153, 102, 255, 0.7)',
+        'rgba(255, 159, 64, 0.7)',
+        'rgba(199, 199, 199, 0.7)',
+        'rgba(83, 102, 255, 0.7)',
+        'rgba(40, 159, 64, 0.7)',
+        'rgba(210, 99, 132, 0.7)'
+      ];
+      
+      const borderColors = backgroundColors.map(color => color.replace('0.7', '1'));
+      
+      // Preparar datasets para o gráfico de tendência mensal
+      const trendDatasets = [];
+      let colorIndex = 0;
+      
+      for (const [category, values] of Object.entries(historicalData.datasets)) {
+        trendDatasets.push({
+          label: category,
+          data: values,
+          backgroundColor: backgroundColors[colorIndex % backgroundColors.length],
+          borderColor: borderColors[colorIndex % borderColors.length],
+          borderWidth: 2,
+          fill: chartType === 'line'
+        });
+        colorIndex++;
+      }
+      
+      // Atualizar ou criar gráfico de tendência mensal
+      const trendCtx = document.getElementById('monthlyTrendChart').getContext('2d');
+      if (monthlyTrendChart) {
+        monthlyTrendChart.destroy();
+      }
+      
+      monthlyTrendChart = new Chart(trendCtx, {
+        type: chartType,
+        data: {
+          labels: historicalData.labels,
+          datasets: trendDatasets
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: 'Quantidade'
+              }
+            },
+            x: {
+              title: {
+                display: true,
+                text: 'Mês'
+              }
+            }
+          },
+          plugins: {
+            legend: {
+              position: 'top',
+            },
+            title: {
+              display: true,
+              text: 'Evolução Mensal por ' + document.getElementById('dataGroup').options[document.getElementById('dataGroup').selectedIndex].text
+            }
+          }
+        }
+      });
+      
+      // Preparar dados para o gráfico de distribuição atual
+      const currentMonthData = {};
+      const currentMonthKey = historicalData.labels[historicalData.labels.length - 1];
+      
+      Object.keys(historicalData.datasets).forEach(category => {
+        const lastValue = historicalData.datasets[category][historicalData.datasets[category].length - 1];
+        if (lastValue > 0) {
+          currentMonthData[category] = lastValue;
+        }
+      });
+      
+      // Atualizar ou criar gráfico de distribuição
+      const distCtx = document.getElementById('distributionChart').getContext('2d');
+      if (distributionChart) {
+        distributionChart.destroy();
+      }
+      
+      distributionChart = new Chart(distCtx, {
+        type: 'doughnut',
+        data: {
+          labels: Object.keys(currentMonthData),
+          datasets: [{
+            data: Object.values(currentMonthData),
+            backgroundColor: backgroundColors.slice(0, Object.keys(currentMonthData).length),
+            borderColor: borderColors.slice(0, Object.keys(currentMonthData).length),
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'right',
+            },
+            title: {
+              display: true,
+              text: 'Distribuição no Mês Atual'
+            }
+          }
+        }
+      });
+      
+      // Preparar dados para o gráfico de comparação
+      const comparisonData = {};
+      Object.keys(historicalData.datasets).forEach(category => {
+        const values = historicalData.datasets[category];
+        if (values.length >= 2) {
+          const current = values[values.length - 1];
+          const previous = values[values.length - 2];
+          const change = previous > 0 ? ((current - previous) / previous * 100).toFixed(1) : 0;
+          comparisonData[category] = {
+            current,
+            previous,
+            change
+          };
+        }
+      });
+      
+      // Atualizar ou criar gráfico de comparação
+      const compCtx = document.getElementById('comparisonChart').getContext('2d');
+      if (comparisonChart) {
+        comparisonChart.destroy();
+      }
+      
+      comparisonChart = new Chart(compCtx, {
+        type: 'bar',
+        data: {
+          labels: Object.keys(comparisonData),
+          datasets: [
+            {
+              label: 'Mês Anterior',
+              data: Object.values(comparisonData).map(d => d.previous),
+              backgroundColor: 'rgba(54, 162, 235, 0.7)',
+              borderColor: 'rgba(54, 162, 235, 1)',
+              borderWidth: 1
+            },
+            {
+              label: 'Mês Atual',
+              data: Object.values(comparisonData).map(d => d.current),
+              backgroundColor: 'rgba(75, 192, 192, 0.7)',
+              borderColor: 'rgba(75, 192, 192, 1)',
+              borderWidth: 1
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: 'Quantidade'
+              }
+            }
+          },
+          plugins: {
+            legend: {
+              position: 'top',
+            },
+            title: {
+              display: true,
+              text: 'Comparativo Mês Atual vs Mês Anterior'
+            },
+            tooltip: {
+              callbacks: {
+                afterLabel: function(context) {
+                  const datasetIndex = context.datasetIndex;
+                  const dataIndex = context.dataIndex;
+                  const category = context.label;
+                  const change = comparisonData[category].change;
+                  
+                  if (datasetIndex === 1) { // Apenas para o dataset do mês atual
+                    return `Variação: ${change}%`;
+                  }
+                  return '';
+                }
+              }
+            }
+          }
+        }
+      });
+      
+      // Atualizar cards de estatísticas
+      updateStatsCards(comparisonData);
+    }
+
+    function updateStatsCards(data) {
+      const statsContainer = document.getElementById('statsCards');
+      statsContainer.innerHTML = '';
+      
+      // Encontrar a categoria com maior crescimento
+      let highestGrowth = { category: '', change: -100 };
+      let highestVolume = { category: '', volume: 0 };
+      
+      for (const [category, values] of Object.entries(data)) {
+        if (parseFloat(values.change) > highestGrowth.change) {
+          highestGrowth = { category, change: values.change };
+        }
+        
+        if (values.current > highestVolume.volume) {
+          highestVolume = { category, volume: values.current };
+        }
+      }
+      
+      // Calcular variação total
+      let totalCurrent = 0;
+      let totalPrevious = 0;
+      
+      Object.values(data).forEach(item => {
+        totalCurrent += item.current;
+        totalPrevious += item.previous;
+      });
+      
+      const totalChange = totalPrevious > 0 ? 
+        ((totalCurrent - totalPrevious) / totalPrevious * 100).toFixed(1) : 0;
+      
+      // Criar cards de estatísticas
+      const statsCards = [
+        {
+          title: 'Total no Mês',
+          value: totalCurrent,
+          change: totalChange,
+          description: `Em comparação com ${totalPrevious} no mês anterior`,
+          icon: '📊',
+          bgColor: 'bg-blue-100 dark:bg-blue-900/30'
+        },
+        {
+          title: 'Maior Crescimento',
+          value: highestGrowth.change > 0 ? `+${highestGrowth.change}%` : `${highestGrowth.change}%`,
+          change: highestGrowth.category,
+          description: `Categoria: ${highestGrowth.category}`,
+          icon: '📈',
+          bgColor: 'bg-green-100 dark:bg-green-900/30'
+        },
+        {
+          title: 'Maior Volume',
+          value: highestVolume.volume,
+          change: highestVolume.category,
+          description: `Categoria com mais registros`,
+          icon: '🏆',
+          bgColor: 'bg-yellow-100 dark:bg-yellow-900/30'
+        }
+      ];
+      
+      statsCards.forEach(card => {
+        const cardElement = document.createElement('div');
+        cardElement.className = `p-4 rounded-lg ${card.bgColor}`;
+        cardElement.innerHTML = `
+          <div class="flex items-start justify-between">
+            <div>
+              <p class="text-sm font-medium text-gray-600 dark:text-gray-300">${card.title}</p>
+              <h3 class="text-2xl font-bold mt-1">${card.value}</h3>
+              <p class="text-xs mt-1 text-gray-500 dark:text-gray-400">${card.change}</p>
+              <p class="text-xs mt-1 text-gray-500 dark:text-gray-400">${card.description}</p>
+            </div>
+            <span class="text-2xl">${card.icon}</span>
+          </div>
+        `;
+        statsContainer.appendChild(cardElement);
+      });
     }
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -1178,7 +2079,40 @@
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }
       });
+      
+      // Adicionar event listeners para os controles dos gráficos
+      document.getElementById('timeRange').addEventListener('change', () => {
+        if (allDataWithOK.length > 0) updateCharts(allDataWithOK);
+      });
+      
+      document.getElementById('chartType').addEventListener('change', () => {
+        if (allDataWithOK.length > 0) updateCharts(allDataWithOK);
+      });
+      
+      document.getElementById('dataGroup').addEventListener('change', () => {
+        if (allDataWithOK.length > 0) updateCharts(allDataWithOK);
+      });
+      
+      // Adicionar event listeners para as abas
+      document.getElementById('tabMain').addEventListener('click', () => {
+        document.getElementById('tabMain').classList.add('active');
+        document.getElementById('tabHistory').classList.remove('active');
+        
+        document.getElementById('mainContent').classList.remove('hidden');
+        document.getElementById('historyContent').classList.add('hidden');
+      });
+      
+      document.getElementById('tabHistory').addEventListener('click', () => {
+        document.getElementById('tabHistory').classList.add('active');
+        document.getElementById('tabMain').classList.remove('active');
+        
+        document.getElementById('historyContent').classList.remove('hidden');
+        document.getElementById('mainContent').classList.add('hidden');
+        
+        // Atualizar gráficos quando a aba for aberta
+        if (allDataWithOK.length > 0) updateCharts(allDataWithOK);
+      });
     });
   </script>
-</body>
-</html>
+
+</body></html>
